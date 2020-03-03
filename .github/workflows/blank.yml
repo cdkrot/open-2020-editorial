@@ -11,5 +11,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run a multi-line script
       run: |
-        sudo apt install texlive-full
-        /r.sh
+        sudo apt install texlive texlive-lang-cyrillic texlive-xetex texlive-generic-extra texlive-fonts-extra texlive-science fonts-cmu texlive-latex-recommended
+        ./r.sh
