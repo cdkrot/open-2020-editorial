@@ -3,6 +3,10 @@
     \LARGE <<Разработка тарифов>>
   \end{center}
 
+  \begin{center}
+      \includegraphics[width=5cm]{d-meme.jpg}
+  \end{center}
+
   \begin{itemize}
   \item Идея задачи --- Григорий Резников, МГУ
   \item Разработка задачи --- Константин Амеличев, ВШЭ
@@ -21,13 +25,13 @@
   
 \end{frame}
 
-\begin{frame}{Решение за $\O(n^n \cdot mn)$ (5 баллов)}
+\begin{frame}{Решение за $\O(n^n \cdot nm)$ (5 баллов)}
   \begin{itemize}
   \item Если раскраска существует, то она существует и с цветами от 1 до $n$
   \item Переберем все раскраски и проверим, что числа вдоль путей возрастают
   \end{itemize}
 \end{frame}
-\begin{frame}{Решение за $\O(2^n \cdot m)$ (15 баллов)}
+\begin{frame}{Решение за $\O(2^n \cdot nm)$ (15 баллов)}
   \begin{itemize}
   \item Разделим ребра на покрытые и не покрытые путями
   \item Ребра второго типа разбивают задачу на несколько меньших задач
@@ -59,7 +63,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Пути не пересекаются, $\O(n \log C \log n)$ (15 баллов)}
+\begin{frame}{Пути не пересекаются, $\O(n \log C \log n)$ (10 баллов)}
   \begin{itemize}
     \item Раскраска точно существует
     \item Сделаем бинарный поиск по максимальному цвету
@@ -67,7 +71,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Пути не пересекаются, $\O(n \log C \log n)$ (15 баллов)}
+\begin{frame}{Пути не пересекаются, $\O(n \log C \log n)$ (10 баллов)}
   \begin{itemize}
     \item Динамическое программирование по поддеревьям
     \item $dp[v]$ --- минимальный возможный цвет, в который можно покрасить $v$, согласованный с поддеревом
@@ -76,7 +80,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Пути не пересекаются, $\O(n \log C \log n)$ (15 баллов)}
+\begin{frame}{Пути не пересекаются, $\O(n \log C \log n)$ (10 баллов)}
   \begin{itemize}
     \item Для вершины $v$ есть набор ограничений
     \item Если через $v$ идет вертикальный путь из поддерева $u$, тогда $dp[v] \ge dp[u] + 1$
@@ -89,7 +93,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Пути не пересекаются, $\O(n \log C \log n)$ (15 баллов)}
+\begin{frame}{Пути не пересекаются, $\O(n \log C \log n)$ (10 баллов)}
   \begin{itemize}
     \item Попробуем и так, и так
     \item $dp[v] \in [dp[a] + 1, k - dp[b]]$ или $dp[v] \in [dp[b] + 1, k - dp[a]]$
@@ -99,7 +103,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Пути не пересекаются, $\O(n \log C)$ (25 баллов)}
+\begin{frame}{Пути не пересекаются, $\O(n \log C)$ (20 баллов)}
   \begin{itemize}
     \item Заметим, что мы взяли ограничения в два множества --- $L$ и $R$
     \item $max(L) + 1 \le min(k - R) \rightarrow max(L) + max(R) \le k - 1$
@@ -108,7 +112,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Пути не пересекаются, $\O(n \log C)$ (25 баллов)}
+\begin{frame}{Пути не пересекаются, $\O(n \log C)$ (20 баллов)}
   \begin{itemize}
     \item Зафиксируем, что будет больше --- $max(L)$ или $max(R)$
     \item Тогда в каждой паре разложение определится однозначно --- максимум пойдет в то множество, где максимум больше

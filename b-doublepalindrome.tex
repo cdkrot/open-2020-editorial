@@ -1,11 +1,11 @@
 \begin{frame}
   \begin{center}
-    \LARGE <<Глиноведение>>
+    \LARGE <<Двойной палиндром>>
   \end{center}
 
   \begin{itemize}
-  \item Идея задачи --- Кто-то
-  \item Разработка задачи --- Кто-то
+  \item Идея задачи --- Дмитрий Ковальков
+  \item Разработка задачи --- Дмитрий Ковальков
   \end{itemize}
 
 \end{frame}
@@ -13,19 +13,60 @@
 \begin{frame}{Постановка задачи}
 
   \begin{itemize}
-  \item Лалала
+    \item Для заданной строки посчитать количество подстрок, являющихся двойными палиндромами
+    \item Двойной палиндром --- конкатенация двух палиндромов одинаковой длины
   \end{itemize}
   
 \end{frame}
 
-\begin{frame}{Решение за $\O(max(x, y))$ (50+ баллов)}
+\begin{frame}{Решение за $\O(n^3)$ (19 баллов)}
   \begin{itemize}
-  \item Лалала.
+  \item Явно переберем все подстроки
+  \item Проверим что левая и правая половина являются палиндромами за $O(n)$
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Решение за $\O(n^2)$ (33 балла)}
+  \begin{itemize}
+  \item Проверять что подстрока является палиндромом можно за $O(1)$ с помощью алгоритма Манакера или hash-функции
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Полное решение}
   \begin{itemize}
-  \item Лалала
+    \item Случаи когда длина половины четна/нечетна рассмотрим отдельно
+    \item $LCenter$, $RCenter$ --- позиции центров левого и правого палиндромов
+    \item $LRadius$, $RRadius$ --- радиусы максимальных палиндромов из позиций LCenter и RCenter
+    \item Случаи когда дистанция между центрами нечетна не рассматриваем
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Полное решение}
+  \begin{itemize}
+    \item Необходимые условия:
+  \end{itemize}
+  \begin{equation*}
+    \begin{cases}
+      \frac{RCenter - LCenter}{2} \leq LRadius 
+      \\
+      \frac{RCenter - LCenter}{2} \leq RRadius
+    \end{cases}
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Полное решение}
+  \begin{equation*}
+    \begin{cases}
+      RCenter \leq 2 \cdot LRadius + LCenter & (1)
+      \\
+      RCenter - 2 \cdot RRadius \leq LCenter  & (2)
+      \\
+      LCenter < RCenter & (3)
+    \end{cases}
+  \end{equation*}
+  \begin{itemize}
+    \item Перебираем $RCenter$, поддерживая множество $LCenter$, для которых выполнены условия (1) и (3)
+    \item Запросы на количество чисел в множестве с условием (2) можно делать с помощью Treap
+    \item Итоговая сложность $O(n \log{n})$
   \end{itemize}
 \end{frame}
