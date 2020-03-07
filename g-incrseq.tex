@@ -80,10 +80,10 @@
   \begin{itemize}
   \item Попробуем набирать элементы в ответ справа налево. Тогда состояние процесса:
   \item $\langle index, curvalue, cntvalue \rangle$, уже прошли до \t{index},
-    текущее рассматриваемое значение \t{curvalue} и их таких \t{cntvalue}.
+    текущее рассматриваемое значение \t{curvalue} и их таких набрано \t{cntvalue}.
   \item Тогда перехода всего два: сдвинуть \t{index} и возможно взять элемент,
-  \item или укрупнить элементы: $(value, cnt) \to (value + 1, cnt / 2)$.
-  \item Формально, поддерживаем $dp[curvalue][cntvalue]$ и обновляем её новыми элементами.
+  \item или укрупнить элементы:$(val,cnt) \to (val + 1,cnt / 2)$.
+  \item Формально, поддерживаем $dp[curval][cntval]$ и обновляем её новыми элементами.
   \end{itemize}
 \end{frame}
 
