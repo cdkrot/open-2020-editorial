@@ -3,6 +3,11 @@
     \LARGE <<Интересные конкурсы>>
   \end{center}
 
+      \begin{center}
+      \includegraphics[width=6cm]{memes/a-meme.jpg}
+  \end{center}
+
+
   \begin{itemize}
   \item Идея задачи --- Григорий Резников
   \item Разработка задачи --- Максим Деб Натх
@@ -54,15 +59,15 @@
 \end{frame}
 
 \begin{frame}{Полное решение за $\mathcal{O}(n)$}
-  \begin{itemize}
+  % \begin{itemize}
     %% \item Рассмотрим такой индекс $i$, что что $bal_{i-1} \leq 0$, $bal_{i} < 0$, либо $bal_{i-1} < 0$, $bal_i \leq 0$. Тогда, если символ $s_i$ не будет участвовать ни в одном перемешивании, то итоговая строка будет иметь $i$-й или $i-1$-й префиксный баланс отрицательным
     %%  \item Изобразим данную с.п. как ломанную. Описанные выше индексы~--- это все отрезки ниже линии $x=0$
 
-  \item Изобразим скобочную последовательность графически:
+  Изобразим с.п. графически:
 
     \begin{figure}[htb]
       \centering
-      \resizebox{0.6\textwidth}{!}{
+      \resizebox{0.5\textwidth}{!}{
         \begin{tikzpicture}
           \draw [OrangeRed, very thick] (0,0) -- ++(1,-1) -- ++(1, 1);
           \draw [thick] (2,0) -- ++(1,1) -- ++(1,-1);
@@ -76,7 +81,7 @@
     Видно, что если взять все последовательности красных скобок и развернуть их, получим ПСП:
     \begin{figure}[htb]
       \centering
-      \resizebox{0.6\textwidth}{!}{
+      \resizebox{0.5\textwidth}{!}{
         \begin{tikzpicture}
           \draw [blue, thick] (0,0) -- ++(1,1) -- ++(1, -1);
           \draw [thick] (2,0) -- ++(1,1) -- ++(1,-1);
@@ -85,7 +90,6 @@
       \end{tikzpicture}}%
       \caption{ПСП после перемешиваний}
     \end{figure}
-  \end{itemize}
 \end{frame} 
 
 \begin{frame}{Полное решение за $\mathcal{O}(n)$}
